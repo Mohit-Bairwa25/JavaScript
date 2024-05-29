@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+<body>
+    <head>
+        <h1>This is h1 Heading</h1>
+    </head>
+</body>
+<script>
+    /*At a very High Level There are two Types od data types in JavaScript
+    1. Primitive Datatypes : undefined, null, number, string, boolean, symbol
+    2.Reference : Arrays and Objects
+    */
+
+
+    // 1. Number: It can be written with or without decimals. 
+    var num1 = 55;
+    var num2 = 56.76;
+    console.log(num1+num2);
+
+    // 2. String: It is used for storing text.
+    var str1 = "This is String";
+    var str2 = "This is 2nd String";
+    console.log(str1+"  "+str2);
+
+    // 3. Boolean: It can hold two values: true or false.
+    let boolVariable = true;
+    console.log(boolVariable); // Outputs: true
+    //Also Boolean
+    var x = true;
+    var y = false;
+    console.log (x,y);
+
+    // 4. Null: It is an assignment value that means no value or no object. It is not an identifier for a property of the global object.
+    let nullVariable = null;
+    console.log(nullVariable); // Outputs: null
+    //Also Nuull
+    var n = null;
+    console.log(n);
+
+    // 5. Undefined: It means a variable has been declared but has not yet been assigned a value.
+    let undefinedVariable;
+    console.log(undefinedVariable); // Outputs: undefined
+
+    // 6. Object: It can contain many values as a written list.
+    let objectVariable = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+    console.log(objectVariable); // Outputs: { firstName: 'John', lastName: 'Doe', age: 50, eyeColor: 'blue' }
+    //Also Objects
+    var marks = {
+        ravi: 34,
+        shubham: 78,
+        harry:99.977
+    }
+    console.log(marks);
+
+    // 7. Array: It can store multiple values in a single variable.
+    let arrayVariable = ["Saab", "Volvo", "BMW"];
+    console.log(arrayVariable); // Outputs: [ 'Saab', 'Volvo', 'BMW' ]
+    //Also Arrays
+    var arr = [1,2,3,4,5,"Beti ka Baap",100]
+    console.log(arr)
+    console.log(arr[0])
+    console.log(arr[4])
+    console.log(arr[5])
+    console.log(arr[6])
+
+    // 8. Symbol: It is a new data type introduced in ES6. It creates a unique value.
+    let symbolVariable = Symbol("symbol");
+    console.log(symbolVariable); // Outputs: Symbol(symbol)
+
+    //9. Objects : An object is a complex data type that allows you to store collections of data.
+    var marks = {
+        ravi: 34,
+        shubham: 78,
+        harry:99.977
+    }
+    console.log(marks);
+
+    //10. Undefined : The undefined data type is a type of variable that has been declared but has not yet been assigned a value.
+    var und = undefined;
+    console.log(und);
+</script>
+</html>

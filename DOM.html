@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Page</title>
+    <style>
+        .myClass {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="myId">Hello World!</h1>
+    <p class="myClass">This is a paragraph.</p>
+    <button id="changeButton">Change Text</button>
+    <button id="createButton">Create Element</button>
+    <button id="deleteButton">Delete Element</button>
+
+    <script>
+        // Select an element by its ID
+        let elementById = document.getElementById('myId');
+        console.log(elementById); // Outputs the element with ID 'myId'
+
+        // Select elements by their class name
+        let elementsByClass = document.getElementsByClassName('myClass');
+        console.log(elementsByClass); // Outputs a HTMLCollection of elements with class 'myClass'
+
+        // Select elements by their tag name
+        let elementsByTag = document.getElementsByTagName('h1');
+        console.log(elementsByTag); // Outputs a HTMLCollection of 'h1' elements
+
+        // Change the content of an element
+        elementById.textContent = 'New Content!';
+        console.log(elementById.textContent); // Outputs 'New Content!'
+
+        // Change the HTML of an element
+        elementById.innerHTML = '<strong>New HTML Content!</strong>';
+        console.log(elementById.innerHTML); // Outputs '<strong>New HTML Content!</strong>'
+
+        // Change the style of an element
+        elementById.style.color = 'red';
+        console.log(elementById.style.color); // Outputs 'red'
+
+        // Add a new attribute to an element
+        elementById.setAttribute('newAttribute', 'newValue');
+        console.log(elementById.getAttribute('newAttribute')); // Outputs 'newValue'
+
+        // Remove an attribute from an element
+        elementById.removeAttribute('newAttribute');
+        console.log(elementById.getAttribute('newAttribute')); // Outputs null
+
+        // Change text
+        document.getElementById("changeButton").addEventListener("click", function() {
+            elementById.innerHTML = "Hello JavaScript!"; //Can be Seen in Console
+            console.log("Changed text of element with id 'myId' to: " + elementById.innerHTML);
+
+            for(var i = 0; i < elementsByClass.length; i++) {
+                elementsByClass[i].innerHTML = "This is a modified paragraph."; //Can be Seen in Web Page
+                console.log("Changed text of element with class 'myClass' to: " + elementsByClass[i].innerHTML);
+            }
+
+            for(var i = 0; i < elementsByTag.length; i++) {
+                elementsByTag[i].innerHTML = "Hello Tag!"; //Can be Seen in Web Page
+                console.log("Changed text of element with tag 'h1' to: " + elementsByTag[i].innerHTML);
+            }
+        });
+
+        // Create new element
+        document.getElementById("createButton").addEventListener("click", function() {
+            var newElement = document.createElement("p");
+            newElement.innerHTML = "This is a new paragraph."; //Can be Seen in Web Page
+            document.body.appendChild(newElement);
+            console.log("Created new paragraph element."); //Can be Seen in Console
+        });
+
+        // Delete element
+        document.getElementById("deleteButton").addEventListener("click", function() {
+            var elementToDelete = document.getElementsByTagName("p")[0];
+            elementToDelete.parentNode.removeChild(elementToDelete);
+            console.log("Deleted first paragraph element."); //Can be Seen in Console
+        });
+    </script>
+</body>
+</html>

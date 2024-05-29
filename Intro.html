@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro</title>
+</head>
+<body>
+    <h1>Welcome to learn JavaScript</h1>
+    <!-- Try to Write id name with alphabet not with number
+    1st is not detected by console but
+    one & S2nd did -->
+    <div id="1st" class="container"> 
+        <button id="click">Don't Click Here</button>
+    </div>
+
+    <div id="one" class="container">
+        <p>This is a Paragraph</p>
+    </div>
+
+    <div id="S2nd" class="container">
+        <p>This is 2nd Paragraph</p>
+    </div>
+
+    <h1>This is 2nd Heading</h1>
+
+    <canvas id="canvas">This is that Canvas</canvas>
+    <script src="Intro.js"></script> 
+    <!-- Keep this script line in the lower Section of html code near body & Head tag -->
+</body>
+<script>
+    alert("Warning: Malicious Website Suspected");/*This Text will Appear in Site as a POP UP*/
+    /*These are Console API*/
+    console.log("Hello World", 4+6, 6-4, 4*6, 6/4);/*This Text will Appear in Console*/
+    document.write("this is document write");
+    console.warn("This is Your 1st Voilation");/*This Text will Appear in Console*/
+    console.error("This is an error");/*This Text will Appear in Console*/
+
+</script>
+</html>
+<!-- 
+    Try to Write These on Console
+
+    one.innerHTML = "I Have Taken Control over class one";
+    "I Have Taken Control over class one"
+    
+    S2nd.innerHTML = "<b>Bold has Taken Over Control</b>";
+    "<b>Bold has Taken Over Control</b>"
+
+    document.getElementsByTagName('h1')
+    HTMLCollection { 0: h1, 1: h1, length: 2 }
+
+    h1 works like an array so [0] & [1] to target them
+
+    document.getElementsByTagName('h1')[0]
+    <h1>
+
+    document.getElementsByTagName('h1')[1]
+    <h1>
+    
+    document.getElementsByTagName('h1')[1].style.fontSize = "30px"
+    "30px" 
+
+    document.getElementsByTagName('h1')[1].style.backgroundColor = "red";
+    "red"
+
+    document.getElementsByTagName('h1')[1].style.visibility = "hidden";
+    "hidden"
+ -->

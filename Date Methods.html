@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Methods</title>
+</head>
+<body>
+    <script>
+        // Create a new Date object
+        let currentDate = new Date();
+        console.log(currentDate); // Outputs the current date and time
+
+        // Get the day of the week (0-6, where 0 is Sunday and 6 is Saturday)
+        let day = currentDate.getDay();
+        console.log(day); // Outputs the day of the week
+
+        // Get the date of the month (1-31)
+        let date = currentDate.getDate();
+        console.log(date); // Outputs the date of the month
+
+        // Get the month (0-11, where 0 is January and 11 is December)
+        let month = currentDate.getMonth();
+        console.log(month); // Outputs the month
+
+        // Get the full year (e.g., 2024)
+        let year = currentDate.getFullYear();
+        console.log(year); // Outputs the year
+
+        // Get the hours (0-23)
+        let hours = currentDate.getHours();
+        console.log(hours); // Outputs the hours
+
+        // Get the minutes (0-59)
+        let minutes = currentDate.getMinutes();
+        console.log(minutes); // Outputs the minutes
+
+        // Get the seconds (0-59)
+        let seconds = currentDate.getSeconds();
+        console.log(seconds); // Outputs the seconds
+
+    </script>
+</body>
+</html>
