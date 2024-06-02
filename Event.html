@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event</title>
+    </head>
+  <body>
+    <button id="myButton">Click me</button>
+    <p id="myParagraph">Hover over me</p>
+    <input id="myInput" type="text" value="Type here" />
+    <form id="myForm">
+      <input type="submit" value="Submit" />
+    </form>
+    <div id="myDiv" style="height: 200px; width: 200px; overflow: auto">
+      <div style="height: 800px; width: 2000px"></div>
+    </div>
+
+    <script>
+      // Select the button, paragraph, input, form, and div
+      var button = document.getElementById("myButton");
+      var paragraph = document.getElementById("myParagraph");
+      var input = document.getElementById("myInput");
+      var form = document.getElementById("myForm");
+      var div = document.getElementById("myDiv");
+
+      // Add event listeners
+      button.addEventListener("click", function () {
+        alert("You clicked the button!");
+      });
+
+      paragraph.addEventListener("mouseover", function () {
+        paragraph.style.color = "red";
+      });
+
+      paragraph.addEventListener("mouseout", function () {
+        paragraph.style.color = "black";
+      });
+
+      window.addEventListener("load", function () {
+        console.log("Page loaded");
+      });
+
+      window.addEventListener("keydown", function (event) {
+        console.log("Key pressed: " + event.key);
+      });
+
+      window.addEventListener("keyup", function (event) {
+        console.log("Key released: " + event.key);
+      });
+
+      input.addEventListener("change", function () {
+        console.log("Input changed: " + input.value);
+      });
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        console.log("Form submitted");
+      });
+
+      div.addEventListener("scroll", function () {
+        console.log("Div scrolled");
+      });
+
+      input.addEventListener("focus", function () {
+        console.log("Input focused");
+      });
+
+      input.addEventListener("blur", function () {
+        console.log("Input lost focus");
+      });
+    </script>
+  </body>
+</html>

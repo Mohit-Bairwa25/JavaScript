@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditional Expressions</title>
+</head>
+<body>
+  <script>
+        //This Code will run in web Page
+        let a = prompt("Hey whats you age?");
+        a = Number.parseInt(a); // Converting the string to a number
+        if(a<0){
+          alert("This is an invalid age");
+        }
+        else if(a<9){
+          alert("You are a kid and you cannot even think of driving");
+        }
+        else if(a<18 && a>=9){
+          alert("You are a kid and you can think of driving after 18");
+        }
+        else{
+          alert("You can now drive as you are above 18");
+        }
+        console.log("Done")
+
+        //This Code will run in Console
+        age = 18;
+        if(age<=8) {
+            console.log("You are a Kid");
+        } 
+        else if(age>=8 && age<18) {
+            console.log("You are a Teenager");
+        }
+        else if(age>=18 && age<28){
+            console.log("You are a Adult");
+        }
+        else if(age>=28 && age<38) {
+            console.log("You are a Man");
+        }
+        else if(age>=38 && age<48) {
+            console.log("You are a Elder Man");
+        }
+        else if(age>=48 && age<58) {
+            console.log("You are a Middle Age Man");
+        }
+        else if(age>=48 && age<58) {
+            console.log("You are a Old Man");
+        }
+        else if(age>=58 && age<68) {
+            console.log("You are a Alive Man");
+        }
+        else {
+            console.log("You are a Healthy Man");
+        }
+        /*If you put last else with condition (age>=68) it will show error*/ 
+
+  </script>
+</body>
+</html>

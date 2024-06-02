@@ -1,0 +1,30 @@
+<!-- setInterval(function, delay): This method calls a function or evaluates an expression at specified intervals (in milliseconds). It will continue calling the function until clearInterval() is called or the window is closed. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Set Interval</title>
+  </head>
+  <body>
+    <p id="myParagraph">0 seconds have passed.</p>
+
+    <script>
+      // Select the paragraph
+      var paragraph = document.getElementById("myParagraph");
+
+      // Initialize a counter
+      var counter = 0;
+
+      // Set an interval to update the text of the paragraph every second
+      var intervalId = setInterval(function () {
+        counter++;
+        paragraph.textContent = counter + " seconds have passed.";
+      }, 1000);
+
+      // Clear the interval after 10 seconds
+      setTimeout(function () {
+        clearInterval(intervalId);
+        paragraph.textContent = "Interval cleared!";
+      }, 10000);
+    </script>
+  </body>
+</html>

@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operator</title>
-</head>
-<body>
-    
-    <script>
         //OPERTORS
         // Arithmetic Operators
         let a = 5;
@@ -18,6 +8,7 @@
         console.log(a * b); // Multiplication: Outputs 10
         console.log(a / b); // Division: Outputs 2.5
         console.log(a % b); // Modulus (Remainder): Outputs 1
+        console.log (a**b); // Exponential : Outputs 25
 
         // Increment and Decrement Operators
 
@@ -53,10 +44,12 @@
         console.log(a);
 
         // Comparison Operators
-        console.log(a == b); // Equal to: Outputs false
-        console.log(a != b); // Not equal to: Outputs true
-        console.log(a === b); // Strict equal to: Outputs false
-        console.log(a !== b); // Strict not equal to: Outputs true
+        let c = 6;
+        let d = '6';
+        console.log(c == d); // Equal to: Outputs false
+        console.log(c != d); // Not equal to: Outputs true
+        console.log(c === d); // Strict equal to: Outputs false
+        console.log(c !== d); // Strict not equal to: Outputs true
         console.log(a > b); // Greater than: Outputs false
         console.log(a < b); // Less than: Outputs true
         console.log(a >= b); // Greater than or equal to: Outputs false
@@ -70,7 +63,3 @@
         // Ternary Operator (Conditional)
         let result = (a > b) ? "a is greater than b" : "a is not greater than b";
         console.log(result); // Outputs "a is not greater than b"
-
-    </script>
-</body>
-</html>

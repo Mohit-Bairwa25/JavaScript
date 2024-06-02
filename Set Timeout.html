@@ -1,0 +1,20 @@
+<!-- setTimeout(function, delay): This method calls a function or evaluates an expression after a specified number of milliseconds (1 second = 1000 milliseconds). It only executes the function once. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Set Timeout</title>
+    </head>
+  <body>
+    <p id="myParagraph">Hello!</p>
+
+    <script>
+      // Select the paragraph
+      var paragraph = document.getElementById("myParagraph");
+
+      // Set a timeout to change the text of the paragraph after 3 seconds
+      setTimeout(function () {
+        paragraph.textContent = "3 seconds have passed!";
+      }, 3000);
+    </script>
+  </body>
+</html>

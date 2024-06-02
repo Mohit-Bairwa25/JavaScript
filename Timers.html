@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timers</title>
+  </head>
+  <body>
+    <p id="myParagraph">Hello!</p>
+
+    <script>
+      // Select the paragraph
+      var paragraph = document.getElementById("myParagraph");
+
+      // Set a timeout to change the text of the paragraph after 3 seconds
+      var timeoutId = setTimeout(function () {
+        paragraph.textContent = "3 seconds have passed!";
+      }, 3000);
+
+      // Clear the timeout after 1 second (before it can execute)
+      setTimeout(function () {
+        clearTimeout(timeoutId);
+        paragraph.textContent = "Timeout cleared!";
+      }, 1000);
+
+      // Set an interval to update the text of the paragraph every second
+      var counter = 0;
+      var intervalId = setInterval(function () {
+        counter++;
+        paragraph.textContent = counter + " seconds have passed.";
+      }, 1000);
+
+      // Clear the interval after 5 seconds
+      setTimeout(function () {
+        clearInterval(intervalId);
+        paragraph.textContent = "Interval cleared!";
+      }, 5000);
+    </script>
+  </body>
+</html>

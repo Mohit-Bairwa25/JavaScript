@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Selector</title>
+</head>
+<body>
+
+    <h1 id="myId" class="myClass">Hello World!</h1>
+    <p class="myClass">Hello JavaScript!</p>
+
+    <script>
+        // Select the first element with the class "myClass"
+        var element1 = document.querySelector(".myClass");
+
+        // Select all elements with the class "myClass"
+        var elements = document.querySelectorAll(".myClass");
+
+        // Select the element with the id "myId"
+        var element2 = document.getElementById("myId");
+
+        // Select all elements with the class "myClass"
+        var elements2 = document.getElementsByClassName("myClass");
+
+        // Select all <h1> elements
+        var elements3 = document.getElementsByTagName("h1");
+    </script>
+
+</body>
+</html>
