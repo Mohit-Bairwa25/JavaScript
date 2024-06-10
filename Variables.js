@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
-</head>
-<body>
-    
 
-</body>
-<!-- Rules For Choosing Variable Names
-1. Letters, Digit, Underscore $ & Signs are Allowed.
-2. Must Begin with a _ $ or a letter.
-3. Javascript reserved words cannot be used as avariable name.
-4. Harry & harry are diifferent Variable name (Case Sensitive).
- -->
-<script>
+// Rules For Choosing Variable Names
+// 1. Letters, Digit, Underscore $ & Signs are Allowed.
+// 2. Must Begin with a _ $ or a letter.
+// 3. Javascript reserved words cannot be used as avariable name.
+// 4. Harry & harry are diifferent Variable name (Case Sensitive).
+// 
+
         var a = 67;
         console.log(a);
         a = "harry";
@@ -51,5 +41,3 @@
     // 6. Undefined: It means a variable has been declared but has not yet been assigned a value.
     var und = undefined;
     console.log(und);
-</script>
-</html>
