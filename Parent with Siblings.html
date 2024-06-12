@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2 id="title">Hello World!</h2>
+    <p id="para1">This is the first paragraph.</p>
+    <p id="para2">This is the second paragraph.</p>
+
+    <script>
+      // Selecting the first paragraph using its id
+      let para1 = document.getElementById("para1");
+
+      // Selecting the second paragraph using its id
+      let para2 = document.getElementById("para2");
+
+      console.log(para1); // $0 in the console
+      console.log(para2); // $1 in the console
+
+      // Accessing parent node of the first paragraph
+      console.log(para1.parentNode); // $0.parentNode in the console
+
+      // Accessing next sibling of the first paragraph
+      console.log(para1.nextSibling); // $0.nextSibling in the console
+    </script>
+  </body>
+</html>

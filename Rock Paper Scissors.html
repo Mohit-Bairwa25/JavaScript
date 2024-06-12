@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <script>
+      let userScore = 0;
+      let computerScore = 0;
+
+      for (let i = 0; i < 3; i++) {
+            let userChoice = prompt(
+            "Enter 1 for Rock, 2 for Paper, 3 for Scissors"
+            );
+            let computerChoice = Math.floor(Math.random() * 3) + 1;
+
+            if (userChoice == computerChoice) {
+                alert("It's a draw!");
+            } 
+            else if ((userChoice == 1 && computerChoice == 3) || (userChoice == 2 && computerChoice == 1) || (userChoice == 3 && computerChoice == 2)
+                    ) { userScore++;
+                        alert("You win this round!");
+                    } 
+            else {
+                computerScore++;
+                alert("Computer wins this round!");
+            }
+        }
+
+        if (userScore > computerScore) {
+            alert("Congratulations! You won the game.");
+        } 
+        else if (userScore < computerScore) {
+            alert("Computer won the game. Better luck next time!");
+        } 
+        else {
+            alert("The game is a draw!");
+        }
+    </script>
+  </body>
+</html>

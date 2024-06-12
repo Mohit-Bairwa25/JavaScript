@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Children</title>
+</head>
+
+<body>
+  <div>
+    <p>This is me and I am great!</p>
+    <span>Sibling</span>
+  </div>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script>
+        console.log(document.body.childChild);
+        console.log(document.body.firstChild);
+        console.log(document.body.lastChild);
+        /*
+        document.childNodes[0]===document.body.firstChild
+        document.childNodes[document.childNodes.length-1]===document.body.lastChild
+        */
+        console.log(document.childNodes[0]);
+        console.log(document.childNodes[document.childNodes.length-1]);
+
+        let arr = Array.from(document.body.childNodes);
+        console.log(arr);
+  </script>
+</body>
+
+</html>
