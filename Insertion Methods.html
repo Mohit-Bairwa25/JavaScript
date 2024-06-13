@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Insertion Methods</title>
+</head>
+
+<body>
+    <div id="div1">Hello</div>
+    <div id="div2">World</div>
+    <div id="div3">This</div>
+    <div id="div4">is</div>
+    <div id="div5">Me</div>
+
+  <script>
+    // Create new elements
+    let newElement1 = document.createElement("p");
+    newElement1.textContent = "This is a new paragraph for append.";
+
+    let newElement2 = document.createElement("p");
+    newElement2.textContent = "This is a new paragraph for prepend.";
+
+    let newElement3 = document.createElement("p");
+    newElement3.textContent = "This is a new paragraph for before.";
+
+    let newElement4 = document.createElement("p");
+    newElement4.textContent = "This is a new paragraph for after.";
+
+    let newElement5 = document.createElement("p");
+    newElement5.textContent = "This is a new paragraph for replaceWith.";
+
+    // Append newElement1 to div1
+    document.getElementById("div1").append(newElement1);
+
+    // Prepend newElement2 to div2
+    document.getElementById("div2").prepend(newElement2);
+
+    // Insert newElement3 before div3
+    document.getElementById("div3").before(newElement3);
+
+    // Insert newElement4 after div4
+    document.getElementById("div4").after(newElement4);
+
+    // Replace div2 with newElement5
+    document.getElementById("div5").replaceWith(newElement5);
+</script>
+
+</body>
+
+</html>

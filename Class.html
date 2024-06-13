@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Class</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .yellow{
+            border: 10px solid navy;
+            background-color: yellow;
+            color: brown;
+        }
+
+        .red{
+            background-color: red;
+            color: white;
+        }
+
+        .text-dark{
+            color: black;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div id="first" class="yellow">
+      <span>Hey I am good</span>
+    </div>
+
+    <div id="second" class="yellow">
+        <span>Hey I am Very good</span>
+    </div>
+
+    <div id="third" class="red">
+        <span>Hey I am Excellent</span>
+    </div>
+
+    <div id="fourth" class="yellow text-dark">
+        <span>Hey I am Better</span>
+    </div>
+
+    <div id="fifth" class="yellow text-dark">
+        <span>Hey I am Best</span>
+    </div>
+
+    <script>
+        // first.className = "text-black red"
+        // second.classList.add("red")
+        // third.classList.remove("red")
+        // fourth.classList.contains("red")
+        // fifth.classList.toggle("red")
+    </script>
+  </body>
+</html>

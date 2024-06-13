@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <!--
+  An Attribute refers to additional properties that can be associated with an HTML element. These attributes provide more information about the element, control its behavior, or determine its appearance.
+  -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Attribute Methods</title>
+</head>
+
+<body>
+  <div id="first" class="hey" data-game="mario" data-player="harry">
+    Whats Uppp! I am first container
+
+  </div>
+  Hello world
+
+  <h1 id="heading" style="color:blue">Hello World!</h1>
+
+  <button onclick="displayAttributes()">Display Attributes</button>
+  <button onclick="changeAttributes()">Change Attributes</button>
+  <button onclick="removeAttributes()">Remove Attributes</button>
+
+  <script>
+        let first = document.getElementById("first");
+        let a = first.getAttribute("class")
+        console.log(a)
+        console.log(first.hasAttribute("class"))
+        console.log(first.hasAttribute("style"))
+        first.setAttribute("hidden", "true")
+        first.setAttribute("class", "true sachin")
+        first.removeAttribute("class")
+        console.log(first.attributes)
+        console.log(first.dataset)
+        console.log(first.dataset.game)
+        console.log(first.dataset.player)
+
+        function displayAttributes() {
+            var headingElement = document.getElementById('heading');
+            var color = headingElement.getAttribute('style');
+            alert('Current style attribute is: ' + color);
+        }
+
+        function changeAttributes() {
+            var headingElement = document.getElementById('heading');
+            headingElement.setAttribute('style', 'color:red');
+            alert('Style attribute has been changed to red!');
+        }
+
+        function removeAttributes() {
+            var headingElement = document.getElementById('heading');
+            headingElement.removeAttribute('style');
+            alert('Style attribute has been removed!');
+        }
+  </script>
+</body>
+
+</html>
