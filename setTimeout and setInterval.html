@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SetTimeout and SetInterval Example</title>
+</head>
+<body>
+    <h1>SetTimeout and SetInterval Example</h1>
+    <p id="timeoutMessage">This message will change after 3 seconds.</p>
+    <p id="intervalMessage">This message will change every 2 seconds.</p>
+
+    <script>
+        // setTimeout function
+        setTimeout(function() {
+            document.getElementById('timeoutMessage').innerHTML = "Timeout function executed!";
+        }, 3000); // Executes after 3 seconds
+
+        // setInterval function
+        var count = 0;
+        setInterval(function() {
+            count++;
+            document.getElementById('intervalMessage').innerHTML = "Interval function executed " + count + " times.";
+        }, 2000); // Executes every 2 seconds
+
+        const sum = (a, b, c) => {
+          console.log("Yes I am running " + (a + b + c))
+        }
+        setTimeout(sum, 5000, 1, 2, 7)
+
+        let multiplier = 1; // Initial value
+        const mul = () => {
+            let result = 7 * multiplier; // Multiply 7 by the multiplier
+            console.log("7 times " + multiplier + " is " + result);
+            multiplier++; // Increment the multiplier
+        }
+
+        setInterval(mul, 7000); // Call the mul function every 7 seconds
+
+
+    </script>
+</body>
+</html>
