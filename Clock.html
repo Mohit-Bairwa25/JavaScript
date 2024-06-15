@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock</title>
+</head>
+<body>
+    <h1>JavaScript Clock</h1>
+    <p id="format1"></p>
+    <p id="format2"></p>
+
+    <script>
+
+        // Create a new Date object
+        var now = new Date();
+
+        // Log the full Date object
+        console.log("Full Date object:", now);
+
+        // Log the individual components of the date and time
+        console.log("Year:", now.getFullYear());
+        console.log("Month (0-11):", now.getMonth());
+        console.log("Date (day of month):", now.getDate());
+        console.log("Day of week (0-6):", now.getDay());
+        console.log("Hour (24-hour format):", now.getHours());
+        console.log("Minutes:", now.getMinutes());
+        console.log("Seconds:", now.getSeconds());
+
+        function updateClock() {
+            var now = new Date();
+            var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+            // Format: 15 June 24 Saturday 4:40:30PM
+            var format1 = now.getDate() + ' ' + 
+                          months[now.getMonth()] + ' ' + 
+                          String(now.getFullYear()).slice(2) + ' ' + 
+                          days[now.getDay()] + ' ' + 
+                          now.getHours() % 12 + ':' + 
+                          ('0' + now.getMinutes()).slice(-2) + ':' +
+                          ('0' + now.getSeconds()).slice(-2) +
+                          (now.getHours() >= 12 ? 'PM' : 'AM');
+            document.getElementById('format1').textContent = format1;
+            /*  
+            String(now.getFullYear()).slice(2): This gets the full four-digit year from the now Date object, converts it to a string, and then uses slice(2) to take only the last two digits.
+
+            ('0' + now.getMinutes()).slice(-2): This gets the minutes from the now Date object, prepends a ‘0’ to ensure it’s always two digits, and then uses slice(-2) to take only the last two digits.
+            */
+            // Format: 15 06 24 Sat 16:40:30
+            var format2 = now.getDate() + ' ' + 
+                          ('0' + (now.getMonth() + 1)).slice(-2) + ' ' + 
+                          String(now.getFullYear()) + ' ' + 
+                          days[now.getDay()].substring(0, 3) + ' ' + 
+                          now.getHours() + ':' + 
+                          ('0' + now.getMinutes()).slice(-2) + ':' +
+                          ('0' + now.getSeconds()).slice(-2);
+            document.getElementById('format2').textContent = format2;
+            /*
+            days[now.getDay()].substring(0, 3): This gets the day of the week from the now Date object (a number between 0 and 6), and uses it to index into the days array to get the full name of the day. It then uses substring(0, 3) to take only the first three letters.
+            */
+
+            // Update every second
+            setTimeout(updateClock, 1000);
+        }
+
+        // Start the clock
+        updateClock();
+
+    </script>
+</body>
+</html>

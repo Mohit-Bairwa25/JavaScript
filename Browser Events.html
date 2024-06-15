@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Browser Events</title>
+    </head>
+
+  <body>
+    <!-- Mouse Events -->
+    <button id="mouseEventButton">Mouse Event Button</button>
+
+    <!-- Keyboard Events -->
+    <input
+      type="text"
+      id="keyboardEventInput"
+      placeholder="Type something..."
+    />
+
+    <!-- Form Events -->
+    <form id="formEventForm">
+      <input type="text" placeholder="Focus on me..." />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      // Mouse Events
+      var btn = document.getElementById("mouseEventButton");
+
+      // The click event is triggered when the button is clicked
+      btn.onclick = function () {
+        console.log("Button clicked.");
+      };
+
+      // The contextmenu event is triggered when the right mouse button is clicked
+      btn.oncontextmenu = function (e) {
+        e.preventDefault(); // Prevent the default right-click menu from showing up
+        console.log("Right button clicked.");
+      };
+
+      // The mouseover event is triggered when the mouse pointer is moved onto the button
+      btn.onmouseover = function () {
+        console.log("Mouse over button.");
+      };
+
+      // The mouseout event is triggered when the mouse pointer is moved out of the button
+      btn.onmouseout = function () {
+        console.log("Mouse out of button.");
+      };
+
+      // The mousedown event is triggered when a mouse button is pressed down on the button
+      btn.onmousedown = function () {
+        console.log("Mouse button pressed down.");
+      };
+
+      // The mouseup event is triggered when a mouse button is released over the button
+      btn.onmouseup = function () {
+        console.log("Mouse button released.");
+      };
+
+      // The mousemove event is triggered when the mouse pointer is moving while it is over the button
+      btn.onmousemove = function () {
+        console.log("Mouse moving over button.");
+      };
+
+      // Keyboard Events
+      var input = document.getElementById("keyboardEventInput");
+
+      // The keydown event is triggered when a key is pressed down
+      input.onkeydown = function () {
+        console.log("Key pressed down.");
+      };
+
+      // The keyup event is triggered when a key is released
+      input.onkeyup = function () {
+        console.log("Key released.");
+      };
+
+      // Form Events
+      var form = document.getElementById("formEventForm");
+
+      // The submit event is triggered when a form is submitted
+      form.onsubmit = function (e) {
+        e.preventDefault(); // Prevent the form from being submitted to avoid page refresh
+        console.log("Form submitted.");
+      };
+
+      // The focus event is triggered when an input field gets focus
+      form.elements[0].onfocus = function () {
+        console.log("Input field focused.");
+      };
+
+      // Document Events
+      // The DOMContentLoaded event is triggered when the initial HTML document has been completely loaded and parsed
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM fully loaded and parsed.");
+      });
+    </script>
+  </body>
+</html>

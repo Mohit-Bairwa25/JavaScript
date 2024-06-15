@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button>
+    <button id="btn3">Button 3</button>
+
+    <script>
+      // Button 1 - Using addEventListener method
+      var btn1 = document.getElementById("btn1");
+      function alertFunction1() {
+        alert("You clicked Button 1 using addEventListener!");
+      }
+      btn1.addEventListener("click", alertFunction1);
+
+      // Button 2 - Using removeEventListener method
+      var btn2 = document.getElementById("btn2");
+      btn2.addEventListener("click", function () {
+        btn1.removeEventListener("click", alertFunction1);
+        alert(
+          "Button 2 was clicked and Button 1's event listener has been removed!"
+        );
+      });
+
+      // Button 3 - Using the event object
+      var btn3 = document.getElementById("btn3");
+      btn3.onclick = function (event) {
+        alert("You clicked Button 3. Event type is: " + event.type);
+      };
+    </script>
+  </body>
+</html>
