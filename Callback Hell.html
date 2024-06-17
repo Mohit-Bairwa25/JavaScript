@@ -1,0 +1,24 @@
+<!-- 
+ Callback Hell, also known as the Pyramid of Doom, refers to a situation where callbacks are nested within callbacks, making the code hard to read and understand. This situation often arises when dealing with asynchronous JavaScript operations, where the result of one operation depends on the completion of another.
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="btn">Click me</button>
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            setTimeout(function() {
+                console.log("First callback");
+                setTimeout(function() {
+                    console.log("Second callback");
+                    setTimeout(function() {
+                        console.log("Third callback");
+                        // And so on...
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!-- 
+A Promise in JavaScript is an object representing the eventual completion or failure of an asynchronous operation. It serves as a placeholder for the eventual results of the operation. It’s a way to handle asynchronous operations without getting into callback hell.
+
+The .then() method is a crucial part of working with promises in JavaScript. It’s used to schedule actions to be performed when the promise is fulfilled or rejected.
+
+.then() is a method that takes up to two arguments: callback functions for the success and failure cases of the promise.
+The first argument is a callback function that’s executed when the promise is resolved, and receives the result of the promise as its argument.
+The second argument (which is often omitted) is a callback function that’s executed when the promise is rejected, and receives the reason for rejection as its argument.
+
+The .catch() method in JavaScript is used with Promises to handle errors. It’s a method that gets invoked when a Promise is rejected or an error is thrown in a Promise chain. It’s a cleaner and more readable alternative to passing a second callback function to .then().
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="btn">Click me</button>
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            // p1: Promise that is resolved
+            let p1 = new Promise(function(resolve, reject) {
+                resolve("p1: Promise resolved");
+            }).then(console.log);
+            
+            // p2: Promise that is rejected
+            let p2 = new Promise(function(resolve, reject) {
+                reject("p2: Promise rejected");
+            }).catch(console.log);
+            
+            // p3: Promise with .then
+            let p3 = new Promise(function(resolve, reject) {
+                resolve("p3: Promise resolved");
+            }).then(console.log);
+            
+            // p4: Promise that throws an error
+            let p4 = new Promise(function(resolve, reject) {
+                throw new Error("p4: Error thrown");
+            }).catch(console.log);
+
+            // p5: Promise where error is resolved by .catch
+            let p5 = new Promise(function(resolve, reject) {
+                throw new Error("p5: Error thrown");
+            }).catch(console.log);
+
+            // Use Promise.all to handle all promises
+            Promise.all([p1, p2.catch(() => {}), p3, p4.catch(() => {}), p5])
+                .then(function(results) {
+                    console.log(results);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        });
+    </script>
+</body>
+</html>
+
+

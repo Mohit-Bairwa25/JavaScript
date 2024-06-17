@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="btn">Click me</button>
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            let promise = new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    resolve("Operation complete");
+                }, 1000);
+            });
+
+            // Attach the first handler
+            promise.then(function(result) {
+                console.log("First handler: " + result);
+            });
+
+            // Attach the second handler
+            promise.then(function(result) {
+                console.log("Second handler: " + result);
+            });
+
+            // Attach the third handler
+            promise.then(function(result) {
+                console.log("Third handler: " + result);
+            });
+        });
+    </script>
+</body>
+</html>

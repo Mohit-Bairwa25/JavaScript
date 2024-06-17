@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button id="btn">Click me</button>
+    <script>
+        document.getElementById('btn').addEventListener('click', function() {
+            // Promise.resolve: Returns a Promise object that is resolved with the given value.
+            let resolvedPromise = Promise.resolve("Resolved promise");
+            resolvedPromise.then(console.log); // Logs: "Resolved promise"
+
+            // Promise.reject: Returns a Promise object that is rejected with the given reason.
+            let rejectedPromise = Promise.reject("Rejected promise");
+            rejectedPromise.catch(console.log); // Logs: "Rejected promise"
+
+            // Promise.all: Returns a promise that resolves when all of the promises in the iterable argument have resolved.
+            let promise1 = new Promise(resolve => setTimeout(resolve, 1000, 'one'));
+            let promise2 = new Promise(resolve => setTimeout(resolve, 2000, 'two'));
+            let promise3 = new Promise(resolve => setTimeout(resolve, 3000, 'three'));
+            Promise.all([promise1, promise2, promise3]).then(console.log); // Logs: ["one", "two", "three"]
+
+            // Promise.allSettled: Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise.
+            let promise4 = Promise.resolve('four');
+            let promise5 = Promise.reject('five');
+            Promise.allSettled([promise4, promise5]).then(console.log); // Logs: [{status: "fulfilled", value: "four"}, {status: "rejected", reason: "five"}]
+
+            // Promise.race: Returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.
+            let promise6 = new Promise(resolve => setTimeout(resolve, 1000, 'one'));
+            let promise7 = new Promise(resolve => setTimeout(resolve, 2000, 'two'));
+            let promise8 = new Promise(resolve => setTimeout(resolve, 3000, 'three'));
+            Promise.race([promise6, promise7, promise8]).then(console.log); // Logs: "one"
+
+            // Promise.any (Note: This is a relatively new method and may not be supported in all environments)
+            // Returns a promise that resolves as soon as one of the promises in the iterable resolves, with the value from that promise.
+            let promise9 = Promise.reject('nine');
+            let promise10 = Promise.resolve('ten');
+            Promise.any([promise9, promise10]).then(console.log); // Logs: "ten"
+        });
+    </script>
+</body>
+</html>

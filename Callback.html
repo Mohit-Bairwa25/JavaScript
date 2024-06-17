@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback Example</title>
+</head>
+<body>
+    <div id="myElement">Original Content</div>
+    
+    <!-- 
+    A callback is a function passed as an argument to another function. This technique allows a function to call another function. A callback function can run after another function has finished. 
+    -->
+
+    <script>
+        // Define a callback function
+        function changeContent(newContent, callback) {
+            let element = document.getElementById('myElement');
+            element.innerHTML = newContent;
+            callback();
+        }
+
+        // Define another function to be used as a callback
+        function sayDone() {
+            console.log('Content update complete!');
+        }
+
+        // Call the function with the callback
+        let a = setTimeout(function() {
+            changeContent('Hello, World!', sayDone);
+        }, 5000);
+        
+    </script>
+</body>
+</html>
