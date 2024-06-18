@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Object</title>
+  </head>
+  <body>
+    <!-- 
+    1. SyntaxError: This is thrown when a mistake is made while parsing JavaScript code. For example, if you forget a closing bracket or use a keyword incorrectly, a SyntaxError will be thrown.
+    -->
+    <script>
+        try {
+        eval('hoo bar');
+        } catch (error) {
+        console.log(error instanceof SyntaxError); // true
+        console.log(error.message);                // "Unexpected identifier"
+        console.log(error.name);                   // "SyntaxError"
+        console.log(error.fileName);               // "Scratchpad/1"
+        console.log(error.lineNumber);             // 2
+        console.log(error.columnNumber);           // 2
+        console.log(error.stack);                  // "@Scratchpad/2:2:3\n"
+        }
+    </script>
+    <!--
+    2.TypeError: This is thrown when a variable or parameter is not of a valid type. For example, if you try to call a non-function, a TypeError will be thrown.
+    -->
+    <script>
+        try {
+        null.f();
+        } catch (error) {
+        console.log(error instanceof TypeError); // true
+        console.log(error.message);              // "null has no properties"
+        console.log(error.name);                 // "TypeError"
+        }
+    </script>
+    <!-- 
+    3. RangeError: This is thrown when a numeric variable or parameter is outside of its valid range.
+    -->
+    <script>
+        try {
+        new Array(-1);
+        } catch (error) {
+        console.log(error instanceof RangeError); // true
+        console.log(error.message);               // "Invalid array length"
+        console.log(error.name);                  // "RangeError"
+        }
+    </script>
+    <!-- 
+    4.EvalError: This is thrown when an error occurs in the eval() function. This is not used much in modern JavaScript.
+    -->
+    <script>
+        try {
+        throw new EvalError('Hello', 'someFile.js', 10);
+        } catch (error) {
+        console.log(error instanceof EvalError); // true
+        console.log(error.message);              // "Hello"
+        console.log(error.name);                 // "EvalError"
+        console.log(error.fileName);             // "someFile.js"
+        console.log(error.lineNumber);           // 10
+        }
+    </script>
+    <!-- 
+    5. A ReferenceError is thrown in JavaScript when you try to use a variable that has not been declared. It’s a type of error that indicates an illegal reference, meaning that a reference to an invalid or non-existent variable or property is being made.
+    -->
+    <script>
+      try {
+        // Trying to use a variable that has not been declared
+        console.log(notDeclaredVariable);
+      } catch (error) {
+        if (error instanceof ReferenceError) {
+          console.log(error.name);    // "ReferenceError"
+          console.log(error.message); // "notDeclaredVariable is not defined"
+          console.log(error.stack);   // Stack trace
+        }
+      }
+    </script>
+
+  </body>
+</html>

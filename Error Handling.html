@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling</title>
+  </head>
+  <body></body>
+
+  <script>
+    console.log("Step 1 is Being Completed");
+    try {
+      console.log(Mohit);
+    } catch (err) {
+      console.log("Error has been Handeled");
+    }
+    console.log("Step 3 is Being Completed");
+  </script>
+
+  <script>
+    console.log("Level A is Started");
+    try {
+      setTimeout(() => {
+        console.log(Mohit);
+      }, 5000);
+    } catch (err) {
+      console.log("Error Handeled");
+    }
+    console.log("Level C is Started");
+  </script>
+  <!-- 
+  The setTimeout function is asynchronous, which means it operates independently of the rest of the code. The try block completes without throwing an error because the error inside setTimeout doesn’t occur until after the try and catch blocks have finished executing. Therefore, the catch block doesn’t catch the error when Mohit is logged, and “Error Handled” is not logged to the console. Instead, a ReferenceError is thrown when Mohit is logged, but it’s not caught by the catch block. After the try and catch blocks finish executing, “Level C is Started” is logged to the console.
+
+    To catch errors in asynchronous code, you can use Promises with .catch() or async/await with a try/catch block. Here’s how you could rewrite the second script to catch the error: 
+  -->
+  <script>
+    console.log("Execution I is Started");
+    setTimeout(() => {
+      try {
+        console.log(Mohit);
+      } catch (err) {
+        console.log("Error Terminated");
+      }
+    }, 5000);
+    console.log("Execution III is Started");
+  </script>
+</html>

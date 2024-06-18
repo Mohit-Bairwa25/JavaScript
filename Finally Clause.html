@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try Catch Finally Example</title>
+  </head>
+  <body>
+    <!-- 
+    The finally clause in JavaScript is used in conjunction with try and catch blocks. It contains code that will be executed regardless of whether an exception is thrown or not. This means the code inside a finally block will run after the try and catch blocks, but before the statements following the try...catch...finally block.
+
+    The finally clause is useful for cleaning up any resources that were used within the try block, such as closing files, clearing memory, or resetting variables. It’s also useful for code that must be executed regardless of whether an operation succeeds or fails.   
+    -->
+    <script>
+      let data = '';
+
+      try {
+        // Trying to use a variable that has not been declared
+        console.log(notDeclaredVariable);
+      } catch (error) {
+        if (error instanceof ReferenceError) {
+          data = 'Caught a ReferenceError';
+          console.log(data);
+        }
+      } finally {
+        // This code will be executed regardless of whether an error was thrown
+        data += '. But the script is still running';
+        console.log(data);
+      }
+    </script>
+
+    <!--
+    The finally clause will execute regardless of whether an error is thrown in the try or catch blocks. However, it doesn’t “fix” errors. If an error is thrown in the catch block and isn’t caught by another try...catch, it will still propagate and may cause your script to stop executing.
+    -->
+
+    <script>
+        let AnotherData = '';
+      
+        try {
+          // Trying to use a variable that has not been declared
+          console.log(notDeclaredVariable);
+        } catch (error) {
+            if (error instanceof ReferenceError) {
+                AnotherData = 'Caught a Another ReferenceError';
+                console.log(AnotherData);
+                // Removed the line that was causing a ReferenceError
+                console.log(notDeclaredVariable);
+          }
+        } finally {
+          // This code will be executed regardless of whether an error was thrown
+          AnotherData += '. But the Another script is still running';
+          console.log(AnotherData);
+        }
+      </script>
+      
+  </body>
+</html>
