@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies</title>
+  </head>
+  <body>
+    <script>
+      // Creating a cookie
+      document.cookie =
+        "username=John Doe; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
+
+      // Reading a cookie
+      let allCookies = document.cookie;
+      console.log(allCookies);
+
+      // Additional cookies
+      document.cookie = "name=harry1122334400";
+      document.cookie = "name2=harry11223344002";
+      document.cookie = "name=harry";
+      document.cookie = "Black-Thanos=12!@#$%^&*()";
+
+      // Prompt for new cookie
+      let key = prompt("Enter your key");
+      let value = prompt("Enter your value");
+      document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
+        value
+      )}`;
+
+      // Reading all cookies again
+      allCookies = document.cookie;
+      console.log(allCookies);
+
+      // Deleting a cookie
+      document.cookie =
+        "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      console.log(allCookies);
+    </script>
+  </body>
+</html>

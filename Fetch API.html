@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API</title>
+  </head>
+  <body>
+    <!-- Add an img element to display the image -->
+    <img id="dog-image" width="500px" height="auto" />
+
+    <script>
+      // URL of the hypothetical API endpoint
+      let url = "https://dog.ceo/api/breeds/image/random";
+
+      // Use fetch() method to start a request
+      fetch(url)
+        .then((response) => {
+          // The API call was successful, check the response
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("An error occurred");
+          }
+        })
+        .then((data) => {
+          // This is the JSON from the response
+          console.log(data);
+
+          // Get the img element and set its src to the image URL
+          document.getElementById('dog-image').src = data.message;
+        })
+        .catch((error) => {
+          // There was an error with the API call
+          console.error("Error:", error);
+        });
+    </script>
+  </body>
+</html>
