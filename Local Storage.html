@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Prompt the user to enter a key and value
+        let key = prompt("Enter key you want to set");
+        let value = prompt("Enter value you want to set");
+
+        // Store the key-value pair in Local Storage
+        localStorage.setItem(key, value);
+
+        // Log the value of the key
+        console.log(`The value at ${key} is ${localStorage.getItem(key)}`);
+
+        // Remove the key-value pair if the key is "red" or "blue"
+        if (key == "red" || key == "blue") {
+            localStorage.removeItem(key);
+        }
+
+        // Clear all data from Local Storage if the key is 0
+        if (key == "0") {
+            localStorage.clear();
+        }
+
+        // Store 'username' and 'email' in Local Storage
+        localStorage.setItem('username', 'John Doe');
+        localStorage.setItem('email', 'john.doe@example.com');
+        console.log('Stored username and email in Local Storage.');
+
+        // Retrieve and log 'username' from Local Storage
+        let username = localStorage.getItem('username');
+        console.log('Username from Local Storage:', username);
+
+        // Remove 'username' from Local Storage
+        localStorage.removeItem('username');
+        console.log('Removed username from Local Storage.');
+
+        // Get the name of the first key in storage
+        let firstKey = localStorage.key(0);
+        console.log('First key in Local Storage:', firstKey);
+
+        // Get the number of data items stored in Local Storage
+        let numberOfItems = localStorage.length;
+        console.log('Number of items in Local Storage:', numberOfItems);
+
+        // Clear all data from Local Storage
+        localStorage.clear();
+        console.log('Cleared all data from Local Storage.');
+
+
+    </script>
+</body>
+</html>

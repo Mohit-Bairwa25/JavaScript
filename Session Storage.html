@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions Storage</title>
+</head>
+<body>
+    <script>
+        // Storing data in Session Storage
+        sessionStorage.setItem('username', 'John Doe');
+        console.log('Stored username in Session Storage.');
+
+        // Retrieving data from Session Storage
+        let username = sessionStorage.getItem('username');
+        console.log('Username from Session Storage:', username);
+
+        // Removing data from Session Storage
+        sessionStorage.removeItem('username');
+        console.log('Removed username from Session Storage.');
+
+        // Storing multiple items in Session Storage
+        sessionStorage.setItem('username', 'John Doe');
+        sessionStorage.setItem('email', 'john.doe@example.com');
+        console.log('Stored multiple items in Session Storage.');
+
+        // Getting the name of the first key in storage
+        let firstKey = sessionStorage.key(0);
+        console.log('First key in Session Storage:', firstKey);
+
+        // Getting the number of data items stored in Session Storage
+        let numberOfItems = sessionStorage.length;
+        console.log('Number of items in Session Storage:', numberOfItems);
+
+        // Clearing all data from Session Storage
+        sessionStorage.clear();
+        console.log('Cleared all data from Session Storage.');
+
+
+        window.onstorage = (e) => {
+            alert("changed")
+            console.log(e)
+        }
+    </script>
+</body>
+</html>
