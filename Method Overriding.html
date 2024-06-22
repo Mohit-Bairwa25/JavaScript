@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Overriding </title>
+</head>
+<body>
+    <!--  Method overriding is a when a subclass (or derived class) provides a specific implementation for a method that is already defined in its superclass (or base class). The overridden method in the subclass has the same name, return type, and parameters as the method in the superclass, but it provides a different behavior or functionality.
+
+    Inheritance: Method overriding is possible due to class inheritance. A subclass inherits methods from its superclass.
+    The subclass can choose to override (replace) specific methods with its own implementation.
+    Syntax:To override a method, use the super.methodName() syntax within the subclass.
+    The super keyword refers to the parent class, allowing you to call the overridden method from the superclass.
+    Purpose:Method overriding allows you to customize behavior for specific subclasses while maintaining a common interface across related classes.
+    It promotes code reusability and flexibility.
+     -->
+    <script>
+        class Employee {
+            constructor(name) {
+                console.log(`${name} - Employee's constructor is here`);
+                this.name = name;
+            }
+
+            login() {
+                console.log(`Employee has logged in`);
+            }
+
+            logout() {
+                console.log(`Employee has logged out`);
+            }
+
+            requestLeaves(leaves) {
+                console.log(`Employee has requested ${leaves} leaves - Auto approved`);
+            }
+        }
+
+        let d = new Employee("Harry");
+        d.login();
+        d.logout();
+        d.requestLeaves(2);
+
+        class Programmer extends Employee {
+            constructor(name) {
+                super(name); // Call parent class constructor
+                console.log(`This is a newly written constructor`);
+            }
+
+            requestCoffee(x) {
+                console.log(`Employee has requested ${x} coffees`);
+            }
+
+            requestLeaves(leaves) {
+                super.requestLeaves(4); // Call parent class method
+                console.log("One extra is granted");
+                // You can also calculate leaves + 1 if needed
+            }
+        }
+
+        let e = new Programmer("Garry");
+        e.login();
+        e.logout();
+        e.requestCoffee(5);
+        e.requestLeaves(3);
+
+    </script>
+</body>
+</html>
