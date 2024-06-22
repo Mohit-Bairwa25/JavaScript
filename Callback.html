@@ -15,7 +15,7 @@
         function changeContent(newContent, callback) {
             let element = document.getElementById('myElement');
             element.innerHTML = newContent;
-            callback();
+            callback(); //It is Calling sayDone
         }
 
         // Define another function to be used as a callback
@@ -25,8 +25,10 @@
 
         // Call the function with the callback
         let a = setTimeout(function() {
-            changeContent('Hello, World!', sayDone);
+            changeContent('Hello, World!', sayDone); //This is Wrong sum(), it means you are executing function here
         }, 5000);
+        /*Here Change Content pass values   ('Hello, World!', sayDone)  to  function changeContent(newContent, callback)
+        so Here newContent = 'Hello World'  and callback = sayDone*/
         
     </script>
 </body>

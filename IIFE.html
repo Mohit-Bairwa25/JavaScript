@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+</head>
+<body>
+    <!-- 
+    An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. It’s a powerful design pattern used to create a local scope for variables, preventing them from polluting the global scope.
+
+    Syantax
+    (function() {
+        // Your code here
+    })();
+
+    -->
+    <script>
+
+        (async function() {
+            const message = "Hello from the IIFE!";
+            await setTimeout(()=>{
+                console.log(message);
+            },5000)
+            
+        })();
+
+    </script>
+
+    <script>
+        // Module Pattern with Private Variables:
+        const makeWithdraw = (balance) => ((copyBalance) => {
+            let balance = copyBalance; // Private variable
+            const doBadThings = () => {
+                console.log("I will do bad things with your money");
+            };
+            doBadThings();
+            return {
+                withdraw(amount) {
+                    if (balance >= amount) {
+                        balance -= amount;
+                        return balance;
+                    }
+                    return "Insufficient money";
+                },
+            };
+        })(balance);
+
+        const firstAccount = makeWithdraw(100);
+        console.log(firstAccount.withdraw(20)); // 80
+            
+    </script>
+</body>
+</html>

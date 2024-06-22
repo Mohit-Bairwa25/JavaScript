@@ -12,6 +12,7 @@ The .catch() method in JavaScript is used with Promises to handle errors. It’s
 
 <!DOCTYPE html>
 <html>
+    <title>Promise</title>
 <body>
     <button id="btn">Click me</button>
     <script>
@@ -41,7 +42,7 @@ The .catch() method in JavaScript is used with Promises to handle errors. It’s
                 throw new Error("p5: Error thrown");
             }).catch(console.log);
 
-            // Use Promise.all to handle all promises
+            // Use Promise.all to handle all promises, Here [] is used for an array
             Promise.all([p1, p2.catch(() => {}), p3, p4.catch(() => {}), p5])
                 .then(function(results) {
                     console.log(results);

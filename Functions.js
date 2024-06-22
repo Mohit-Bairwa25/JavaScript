@@ -19,3 +19,9 @@ var arr =[1,2,3,4,5];
 arr.forEach(function(element){
     console.log("Array Function "+element)
 })
+
+// Arrow function to calculate the square of a number
+const square = (x) => x * x;
+
+// Example usage
+console.log(square(5)); // Output: 25

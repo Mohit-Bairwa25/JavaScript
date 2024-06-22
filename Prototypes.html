@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Example</title>
+</head>
+<body>
+    <script>
+        // Create an object with a method
+        const myObject = {
+            city: "Madrid",
+            greet() {
+                console.log(`Greetings from ${this.city}`);
+            },
+        };
+
+        // Call the method
+        myObject.greet(); // Output: Greetings from Madrid
+
+        // Access the prototype
+        const prototypeOfMyObject = Object.getPrototypeOf(myObject);
+        console.log(prototypeOfMyObject); // Output: Object {}
+
+        // Create a constructor function for our objects
+        function Person(name, language) {
+            this.name = name;
+            this.language = language;
+        }
+
+        // Add a method to the prototype of Person
+        Person.prototype.run = function() {
+            alert("Running!");
+        };
+
+        // Create an instance of Person
+        const harry = new Person("Harry", "JavaScript");
+
+        // Access the 'name' property and call the 'run' method
+        console.log(harry.name); // Output: Harry
+        harry.run(); // Output: Running!
+
+    </script>
+</body>
+</html>
