@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Object</title>
+</head>
+<body>
+    <script>
+        // Define a Car class
+        class Car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+
+            // Add a method to calculate age
+            age() {
+                const currentDate = new Date();
+                return currentDate.getFullYear() - this.year;
+            }
+        }
+
+        // Create Car objects
+        const myCar1 = new Car("Ford", 2014);
+        const myCar2 = new Car("Audi", 2019);
+
+        // Display car ages
+        console.log(`My ${myCar1.name} is ${myCar1.age()} years old.`);
+        console.log(`My ${myCar2.name} is ${myCar2.age()} years old.`);
+    </script>
+</body>
+</html>

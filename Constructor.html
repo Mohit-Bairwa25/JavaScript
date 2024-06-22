@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <script>
+        // Constructor function for creating Person objects
+        function Person(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+        }
+
+        // Create instances of Person
+        const john = new Person("John", "Doe", 30);
+        const jane = new Person("Jane", "Smith", 25);
+
+        // Access properties
+        console.log(john.firstName); // Output: John
+        console.log(jane.age); // Output: 25
+    </script>
+</body>
+</html>
